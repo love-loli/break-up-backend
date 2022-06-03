@@ -1,6 +1,6 @@
-import * as express from 'express'
+import express from 'express'
 
-const app = express.default()
+const app = express()
 const port = '4396'
 
 app.get('/', (_, res) => {
