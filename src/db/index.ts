@@ -9,9 +9,9 @@ const baseClient: Knex.Config<any> = {
     max: 4,
   },
 }
-const readerClient1 = knex({
+const readerClient = knex({
   connection: {
-    host: process.env.DB_READER_HOST1,
+    host: process.env.DB_READER_HOST,
     port: Number(process.env.DB_PORT),
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -20,16 +20,6 @@ const readerClient1 = knex({
   ...baseClient,
 })
 
-const readerClient2 = knex({
-  connection: {
-    host: process.env.DB_READER_HOST2,
-    port: Number(process.env.DB_PORT),
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: 'break_up',
-  },
-  ...baseClient,
-})
 
 const writerClient = knex({
   connection: {
@@ -43,7 +33,6 @@ const writerClient = knex({
 })
 
 export {
-  readerClient1,
-  readerClient2,
+  readerClient,
   writerClient,
 }
